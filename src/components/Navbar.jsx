@@ -1,12 +1,36 @@
 import { Link } from "react-router-dom"
-import { useState } from 'react'
+import './Navbar.css'
+import { useEffect, useState, useRef } from 'react'
+
 
 function NavBar() {
+
+    const [ menuOpen, setMenuOpen ] = useState(false)
+    const navbar = useRef(null)
+
+    const burguer = () => {
+        setMenuOpen(!menuOpen)
+    }
+
+useEffect(() => {
+    const handleClick = (e) => {
+       if(navbar.current && !navbar.current.contains(e.target)) {
+        setMenuOpen(false)
+       } 
+    }
+    document.addEventListener('mousedown', handleClick)
+
+    return() => {
+        document.removeEventListener('mousedown', handleClick)
+    }
+},[])
+
     return (
 
-        <div className="navbar">
+    <div ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
             <Link to="/" className="toggle" id="navHamb">
-                <span className="material-symbols-outlined">menu</span>
+                <span onClick={burguer} className="material-symbols-outlined">menu</span>
+
             </Link>
         
 
@@ -14,12 +38,12 @@ function NavBar() {
         
 
         <div className="links">
-            <Link to="/porfolio" className="porfolio">Portafolio</Link>
-            <Link to="/me" className="sobremi">Sobre mi</Link>
+            <Link to="/porfolio" className="link">Portafolio</Link>
+            <Link to="/me" className="link">Sobre mi</Link>
         </div>
 
         <div className="link-contact">
-            <Link to="/contact" className="contact">Contacto</Link>
+            <Link to="/contact" className="link">Contacto</Link>
         </div>
     </div>
     
@@ -28,4 +52,5 @@ function NavBar() {
 
     
 export default NavBar
+
 
