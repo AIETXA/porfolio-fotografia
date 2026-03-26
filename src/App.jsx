@@ -5,6 +5,7 @@ import AboutMe from './pages/AboutMe'
 import Contact from './pages/Contact'
 import Porfolio from './pages/Portfolio'
 import NavBar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
  
@@ -17,9 +18,8 @@ function App() {
         <Route path='/me' element={<AboutMe/>} /> 
         <Route path='/porfolio' element={<Porfolio/>} /> 
         <Route path='/contact' element={<Contact/>} /> 
-
-
       </Routes>
+      <Footer/>
     </Router>
   )
 }
