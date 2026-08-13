@@ -8,28 +8,26 @@ function NavBar() {
     const [ menuOpen, setMenuOpen ] = useState(false)
     const navbar = useRef(null)
 
-    const burguer = () => {
-        setMenuOpen(!menuOpen)
-    }
+    const toggleBurger = () => {setMenuOpen(!menuOpen)}
 
-useEffect(() => {
-    const handleClick = (e) => {
-       if(navbar.current && !navbar.current.contains(e.target)) {
-        setMenuOpen(false)
-       } 
-    }
-    document.addEventListener('mousedown', handleClick)
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+        if(navbar.current && !navbar.current.contains(e.target)) {
+            setMenuOpen(false)
+        } 
+        }
+        document.addEventListener('mousedown', handleClickOutside)
 
-    return() => {
-        document.removeEventListener('mousedown', handleClick)
-    }
-},[])
+        return() => {
+            document.removeEventListener('mousedown', handleClick)
+        }
+    },[])
 
     return (
 
     <div ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
-            <Link to="/" className="toggle" id="navHamb">
-                <span onClick={burguer} className="material-symbols-outlined">menu</span>
+            <Link to="/" className="toggle" onClick={toggleBurger}>
+                <span className="material-symbols-outlined">menu</span>
 
             </Link>
         
@@ -39,7 +37,7 @@ useEffect(() => {
 
         <div className="links">
             <Link to="/porfolio" className="link">Portafolio</Link>
-            <Link to="/me" className="link">Sobre mi</Link>
+            <Link to="/about-me" className="link">Sobre mi</Link>
         </div>
 
         <div className="link-contact">
