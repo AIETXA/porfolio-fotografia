@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import './Navbar.css'
+import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
 
 
@@ -19,7 +19,7 @@ function NavBar() {
         document.addEventListener('mousedown', handleClickOutside)
 
         return() => {
-            document.removeEventListener('mousedown', handleClick)
+            document.removeEventListener('mousedown', handleClickOutside)
         }
     },[])
 

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+  --bg-primary: #fafafa;       /* Blanco roto / off-white para el fondo principal */
+  --bg-surface: #ffffff;       /* Blanco puro para tarjetas o elementos destacados */
+  --text-main: #171717;        /* Negro suave para títulos (no 100% negro puro para no fatigar la vista) */
+  --text-secondary: #737373;   /* Gris medio para descripciones, fechas o subtítulos */
+  --text-muted: #a3a3a3;       /* Gris claro para textos secundarios o bordes suaves */
+  
+  /* Detalles / Bordes */
+  --border-light: #e5e5e5;     /* Líneas finas y discretas */
+  --accent-hover: #000000;     /* Negro puro para interacciones directas */
+
+  --fuente: 'Titillium Web', sans-serif;
+}
+
