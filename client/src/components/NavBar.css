@@ -1,6 +1,6 @@
 
 .navbar {
-    background-color: #415068;
+    background-color: var(--text-main);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -38,7 +38,7 @@
     padding: 1em;
     color: white;
     margin-left: 18px;
-    font-family: "WindSong", cursive;
+    font-family: "Tit", cursive;
     font-weight: 400;
     font-style: normal;
     font-size: 1.2em;
