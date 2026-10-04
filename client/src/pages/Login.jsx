@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 function AdminLogin() {
-  const [mensaje, setMensaje] = useState('')
-  const navigate = useNavigate()
-  const { login } = useAuth()
+  const [mensaje, setMensaje] = useState('');
+  const navigate = useNavigate();
+  const login = useAuth();
   const apiUrl = import.meta.env.VITE_API_URL;
 
 
@@ -15,7 +15,7 @@ const handleSubmit = async (e) => {
     const admin = formData.get('admin')
     const pass = formData.get('pass')
 
-
+ 
 try {
     const res = await fetch(`${apiUrl}/admin/login`, {
         method: 'POST',
@@ -37,6 +37,7 @@ try {
     setMensaje('Error en el servidor');
     }
 }
+
 
 return (
  <div style={{ padding: '2rem' }}>

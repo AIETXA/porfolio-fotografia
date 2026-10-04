@@ -7,6 +7,7 @@ import Porfolio from './pages/Porfolio.jsx'
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
 import AdminLogin from './pages/Login.jsx'
+import ProtectAdmin from './components/ProtectedRoute.jsx'
 
 
 function App() {
@@ -22,6 +23,12 @@ function App() {
         <Route path='/contact' element={<Contact/>} /> 
 
         <Route path='/admin/login' element={<AdminLogin/>}/>
+
+
+        <Route element={<ProtectAdmin/>}/>
+          <Route path='/admin' element={<h1>admin panel</h1>}/>
+
+          
       </Routes>
       <Footer/>
     </Router>
