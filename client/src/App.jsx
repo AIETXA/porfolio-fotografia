@@ -6,6 +6,8 @@ import Contact from './pages/Contact.jsx'
 import Porfolio from './pages/Porfolio.jsx'
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
+import AdminLogin from './pages/Login.jsx'
+
 
 function App() {
  
@@ -18,6 +20,8 @@ function App() {
         <Route path='/about' element={<AboutMe/>} /> 
         <Route path='/porfolio' element={<Porfolio/>} /> 
         <Route path='/contact' element={<Contact/>} /> 
+
+        <Route path='/admin/login' element={<AdminLogin/>}/>
       </Routes>
       <Footer/>
     </Router>
