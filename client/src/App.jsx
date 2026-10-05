@@ -1,11 +1,12 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar.jsx'
+import Footer from './components/Footer.jsx'
+
 import Home from './pages/Home.jsx'
 import AboutMe from './pages/AboutMe.jsx'
 import Contact from './pages/Contact.jsx'
 import Porfolio from './pages/Porfolio.jsx'
-import NavBar from './components/NavBar.jsx'
-import Footer from './components/Footer.jsx'
 import AdminLogin from './pages/Login.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
 

@@ -26,6 +26,6 @@ function AboutMe() {
             </div>
         </>
       )
-    }
+    };
    
-    export default AboutMe
+export default AboutMe

@@ -32,12 +32,12 @@ function NavBar() {
             </Link>
         
 
-            <Link to="/" className="brand">Ailén Echaguibel</Link> 
+            <Link to="/" className="home">Ailén Echaguibel</Link> 
         
 
         <div className="links">
             <Link to="/porfolio" className="link">Portafolio</Link>
-            <Link to="/about-me" className="link">Sobre mi</Link>
+            <Link to="/about" className="link">Sobre mi</Link>
         </div>
 
         <div className="link-contact">
