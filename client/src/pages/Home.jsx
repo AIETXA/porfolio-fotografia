@@ -13,10 +13,7 @@ function Home() {
       <div className="home-container">
         
       
-        <div className="home-info">
-          <h1>Ailén Echaguibel Meyer</h1>
-          <h3>Fotografía</h3>
-        </div>
+        <div className="home-info"></div>
         
       </div>
           

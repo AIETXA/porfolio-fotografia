@@ -11,7 +11,7 @@ function NavBar() {
     
     const toggleBurger = () => {setMenuOpen(!menuOpen)}
     
-    const { theme, toogleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
 
     useEffect(() => {
@@ -28,30 +28,30 @@ function NavBar() {
     },[])
 
     return (
-
-    <div ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
-            <Link to="/" className="toggle" onClick={toggleBurger}>
+        <nav ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
+            
+            <button className="menu-burger" onClick={toggleBurger}>
                 <span className="material-symbols-outlined">menu</span>
-
-            </Link>
-        
-
-            <Link to="/" className="home">Ailén Echaguibel</Link> 
-        
-
-            <div className="links">
-                <Link to="/porfolio" className="link">Portafolio</Link>
-                <Link to="/about" className="link">Sobre mi</Link>
-            </div>
-
-            <div className="link-contact">
-                <Link to="/contact" className="link">Contacto</Link>
-            </div>
-
-            <button onClick={toogleTheme}>
-                {theme === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro'}
             </button>
-    </div>
+
+        
+
+            <Link to="/" className="logo"> 
+                aietxa | photografy
+            </Link> 
+        
+
+            <div className="nav-links">
+                <Link to="/porfolio" className="nav-link">Portafolio</Link>
+                <Link to="/about" className="nav-link">Sobre mi</Link>
+                <Link to="/contact" className="nav-link">Contacto</Link>
+            </div>
+
+
+            <button onClick={toggleTheme}>
+                {theme === 'light' ? '🌙 ' : '☀️'}
+            </button>
+    </nav>
     
     )
 }
