@@ -1,19 +1,20 @@
-import '../styles/about.css'
+import '../styles/about.scss'
 
 function AboutMe() {
      return (
-        <>
+        <div className='about-container'>
             <div className="about-me">
               <h1>Sobre mi</h1>
             </div>
 
               
-            <div className="me-container">
-            <div className="me">
-                <div className="me-photo">
+            <div className="about-card">
+            <div className="about-detail">
+                <div className="about-photo">
                     <img src="#" alt="Foto de Ailén"/>
                 </div>
-                <div className="me-text">
+
+                <div className="about-text">
                     <h3>Para que me conozcas un poco mas: </h3>
                     <p>Soy fotografa desde que comence a robar. 
                         Mi mama tenía una Pentax compacta de rollo, 
@@ -24,7 +25,7 @@ function AboutMe() {
                 </div>
               </div>
             </div>
-        </>
+        </div>
       )
     };
    

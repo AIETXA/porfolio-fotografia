@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
 import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
+import { useTheme } from "../hooks/useTheme"
 
 
 function NavBar() {
 
     const [ menuOpen, setMenuOpen ] = useState(false)
     const navbar = useRef(null)
-
+    
     const toggleBurger = () => {setMenuOpen(!menuOpen)}
+    
+    const { theme, toogleTheme } = useTheme();
+
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -35,14 +39,18 @@ function NavBar() {
             <Link to="/" className="home">Ailén Echaguibel</Link> 
         
 
-        <div className="links">
-            <Link to="/porfolio" className="link">Portafolio</Link>
-            <Link to="/about" className="link">Sobre mi</Link>
-        </div>
+            <div className="links">
+                <Link to="/porfolio" className="link">Portafolio</Link>
+                <Link to="/about" className="link">Sobre mi</Link>
+            </div>
 
-        <div className="link-contact">
-            <Link to="/contact" className="link">Contacto</Link>
-        </div>
+            <div className="link-contact">
+                <Link to="/contact" className="link">Contacto</Link>
+            </div>
+
+            <button onClick={toogleTheme}>
+                {theme === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro'}
+            </button>
     </div>
     
     )

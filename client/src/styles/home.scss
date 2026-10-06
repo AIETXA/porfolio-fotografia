@@ -1,0 +1,12 @@
+@use './colors' as *;
+
+.home-container {
+    min-height: 100vh;
+    background-color: $bg-light;
+    color: $text-light ;
+
+    background-image: $filter-noise;
+    background-repeat: repeat;
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

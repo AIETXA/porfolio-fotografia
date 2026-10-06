@@ -1,0 +1,11 @@
+@use './colors' as *;
+
+
+
+
+.about-container {
+    min-height: 100vh;
+    background-color: $bg-light;
+    color: $text-light ;
+}
+
