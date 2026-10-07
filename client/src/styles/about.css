@@ -1,0 +1,8 @@
+
+
+.about-container {
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    color: var(--text-light) ;
+}
+
