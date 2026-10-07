@@ -12,4 +12,42 @@
 
     /*Fuente*/
     --font-family: "Clarity City", sans-serif;
+
+    /*modo clsro - por defecto*/
+
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+
+    /*footer invertido-texto claro, fondo oscuro*/
+    --bg-footer: var(--bg-dark);
+    --text-footer: var(--text-dark);
+}
+
+[data-theme='dark'] {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+
+    --bg-footer: var(--bg-light);
+    --text-footer: var(--text-light);
+}
+
+body {
+  position: relative;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+  min-height: 100vh;
+}
+
+/* Textura de ruido fija */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--filter-noise);
+  pointer-events: none; 
+  z-index: 9999;       
 }

@@ -14,8 +14,8 @@
     padding: 0 5vw;
     box-sizing: border-box;
 
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg-light);
+    color: var(--text-light);
 
     z-index: 100;
 
@@ -23,6 +23,8 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
+
     
    
 }
@@ -58,7 +60,7 @@
     text-decoration: none;
 
     font-size: 0.9rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
 }
 
 .nav-link::after {

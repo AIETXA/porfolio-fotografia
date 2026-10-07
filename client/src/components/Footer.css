@@ -1,0 +1,21 @@
+.footer {
+
+  background: var(--bg-footer);
+  color: var(--text-footer);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand, .link {
+    color: var(--text-footer);
+    text-decoration: none;
+}
+
+.link:hover {
+    letter-spacing: 0.08em;
+    transform: scaleX(1);
+    
+}
