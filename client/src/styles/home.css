@@ -8,3 +8,16 @@
     
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.home-card {
+    height: 300px;
+    width: 600px;
+}
+
+.home-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-top: 50px;
+}
