@@ -1,5 +1,7 @@
 .footer {
-
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background: var(--bg-footer);
   color: var(--text-footer);
   padding: 2rem;
