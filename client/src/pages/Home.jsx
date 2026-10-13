@@ -6,8 +6,8 @@ import { useTheme } from '../hooks/useTheme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import portfolioImg from '../assets/mirar-img.png'
-
+//import portfolioImg from '../assets/mirar-img.png'
+import portfolioImg from '../assets/observar-img-2.png'
 
 function Home() {
   return (

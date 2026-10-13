@@ -4,41 +4,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px); /* Ajusta según la altura de tu navbar/footer */
+    min-height: calc(100vh - 80px); 
     padding: 2rem;
     box-sizing: border-box;
 }
 
-/* Estilo para el texto de la izquierda 
-.home-layout {
-    display: flex;
-    align-items: end;  Alinea verticalmente el texto y la imagen en el mismo renglón 
-    gap: 3rem;  Espacio elegante entre el texto "Te invito a ver" y la imagen 
-    text-decoration: none;
-    max-width: 1100px;
-    width: 100%;
-}
 
-.home-text-left {
-    font-size: 2.25rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: var(--text);
-    margin-bottom: 50px;
-    white-space: nowrap;  Evita que el texto se rompa en varias líneas 
-}
-*/
-
-
-/* Contenedor derecho que agrupa la imagen y el texto revelable */
 .home-center-content {
     position: relative;
-    display: inline-block;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 700px; /* Tamaño máximo para que no ocupe toda la pantalla */
+    max-width: 800px; 
 }
 
 .image-wrapper {
@@ -56,24 +34,24 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Texto inferior oculto por defecto */
+
 .hover-reveal-text {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    top: 55%;
-    left: 55%;
-    font-size: 2.2rem;
+    justify-content:end;
+    align-items:end;
+    top: 68%;
+    left: 58%;
+    font-size: clamp(1.1rem, 2.8vw, 2.2rem);
     letter-spacing: 6px;
     text-transform: uppercase;
     color: var(--text);
     white-space: nowrap;
     opacity: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     z-index: 1;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
 }
 
@@ -85,8 +63,9 @@
 
 .home-layout:hover .hover-reveal-text i,
 .home-layout:hover .hover-reveal-text {
-    opacity: 1; /* Aparece el texto "mi galería" */
-    transform: translateY(0); /* Se desliza con suavidad a su sitio */
+    opacity: 2; /* Aparece el texto "mi galería" */
+    transform: translateY(60%); /* Se desliza con suavidad a su sitio */
+  
 }
 
 
@@ -94,12 +73,19 @@
 /* --- MEDIA QUERY PARA MÓVILES --- */
 @media (max-width: 768px) {
   .home-layout {
-    flex-direction: column; /* En pantallas chicas se apilan verticalmente */
+    flex-direction: column; 
     align-items: flex-start;
+    height: fit-content;
     gap: 1.5rem;
   }
   
-  .home-text-left {
-    white-space: normal;
+  .home-image {
+    height: max-content;
+    
+  }
+  .hover-reveal-text {
+    padding-right: 5px;
+    
+
   }
 }
