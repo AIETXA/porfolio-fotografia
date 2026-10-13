@@ -33,7 +33,7 @@
 
 body {
   position: relative;
-  background-color: var(--bg);
+  background-color: var(--bg-light);
   color: var(--text);
   font-family: var(--font-family);
   min-height: 100vh;
@@ -50,4 +50,14 @@ body::before {
   background-image: var(--filter-noise);
   pointer-events: none; 
   z-index: 9999;       
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0px;
+  padding-bottom: 120px;
+  box-sizing: border-box;
 }

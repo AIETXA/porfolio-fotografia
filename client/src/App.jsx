@@ -17,21 +17,23 @@ function App() {
   return (
     <Router>
       <NavBar/>
-      <Routes>
-        <Route path='/' element={<Home/>} /> 
-        <Route path='/about' element={<AboutMe/>} /> 
-        <Route path='/porfolio' element={<Porfolio/>} /> 
-        <Route path='/contact' element={<Contact/>} /> 
+      <div className='app-container'>
+          <Routes>
+            <Route path='/' element={<Home/>} /> 
+            <Route path='/about' element={<AboutMe/>} /> 
+            <Route path='/porfolio' element={<Porfolio/>} /> 
+            <Route path='/contact' element={<Contact/>} /> 
 
-        <Route path='/admin/login' element={<AdminLogin/>}/>
+            <Route path='/admin/login' element={<AdminLogin/>}/>
 
 
-        <Route element={<ProtectAdmin/>}/>
-          <Route path='/admin' element={<h1>admin panel</h1>}/>
+            <Route element={<ProtectAdmin/>}/>
+              <Route path='/admin' element={<h1>admin panel</h1>}/>
 
-          
-      </Routes>
-      <Footer/>
+              
+          </Routes>
+      </div> 
+    <Footer/>
     </Router>
   )
 }
