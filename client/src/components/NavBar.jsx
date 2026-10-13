@@ -2,7 +2,9 @@ import { Link } from "react-router-dom"
 import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
 import { useTheme } from "../hooks/useTheme"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon } from "@fortawesome/free-solid-svg-icons"
 
 function NavBar() {
 
@@ -42,14 +44,14 @@ function NavBar() {
         
 
             <div className="nav-links">
-                <Link to="/porfolio" className="nav-link">Portafolio</Link>
+                <Link to="/porfolio" className="nav-link">Galeria</Link>
                 <Link to="/about" className="nav-link">Sobre mi</Link>
                 <Link to="/contact" className="nav-link">Contacto</Link>
             </div>
 
 
             <button className="btn-light-dark" onClick={toggleTheme}>
-                {theme === 'light' ? '🌙 ' : '☀️'}
+                {theme === 'light' ? <FontAwesomeIcon icon={faSun}/> : <FontAwesomeIcon icon={faMoon} />}
             </button>
     </nav>
     

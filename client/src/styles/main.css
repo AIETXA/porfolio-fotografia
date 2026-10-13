@@ -18,24 +18,29 @@
     --bg: var(--bg-light);
     --text: var(--text-light);
 
-    /*footer invertido-texto claro, fondo oscuro*/
+    /*footer invertido-texto claro, fondo oscuro
     --bg-footer: var(--bg-dark);
-    --text-footer: var(--text-dark);
+    --text-footer: var(--text-dark);*/
 }
 
 [data-theme='dark'] {
     --bg: var(--bg-dark);
     --text: var(--text-dark);
 
-    --bg-footer: var(--bg-light);
-    --text-footer: var(--text-light);
+    /*--bg-footer: var(--bg-light);
+    --text-footer: var(--text-light);*/
+
+    .home-image {
+      filter: grayscale(100%) contrast(150%);
+    }
 }
 
 body {
   position: relative;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-family);
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }
 
