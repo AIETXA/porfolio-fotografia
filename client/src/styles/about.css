@@ -1,8 +1,77 @@
 
 
 .about-container {
-    min-height: 100vh;
-    background-color: var(--bg-light);
-    color: var(--text-light) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); 
+    padding: 6rem 5vw 4rem 5vw;
+    margin-top: 30px;
+    box-sizing: border-box;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-left-detail {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Si quieres mantener el estilo en blanco y negro o con un toque sutil: */
+    filter: grayscale(100%) contrast(105%);
+    transition: filter 0.3s ease;
+}
+
+.about-photo:hover {
+    filter: grayscale(0%) contrast(100%); /* Color al pasar el cursor (opcional) */
+}
+
+.about-right-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-right-detail h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.bio-lead {
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+}
+
+/* --- RESPONSIVO PARA MÓVILES Y TABLETS --- */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Se pasa a una sola columna */
+        gap: 2.5rem;
+        text-align: left;
+    }
+    
+    .about-container {
+        padding-top: 7rem;
+    }
+}    
