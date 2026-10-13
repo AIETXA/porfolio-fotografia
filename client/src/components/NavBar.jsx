@@ -48,7 +48,7 @@ function NavBar() {
             </div>
 
 
-            <button onClick={toggleTheme}>
+            <button className="btn-light-dark" onClick={toggleTheme}>
                 {theme === 'light' ? '🌙 ' : '☀️'}
             </button>
     </nav>
