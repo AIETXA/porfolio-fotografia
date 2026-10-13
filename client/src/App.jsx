@@ -6,7 +6,7 @@ import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import AboutMe from './pages/AboutMe.jsx'
 import Contact from './pages/Contact.jsx'
-import Porfolio from './pages/Porfolio.jsx'
+import Galery from './pages/Galery.jsx'
 import AdminLogin from './pages/Login.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
 
@@ -21,7 +21,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>} /> 
             <Route path='/about' element={<AboutMe/>} /> 
-            <Route path='/porfolio' element={<Porfolio/>} /> 
+            <Route path='/galery' element={<Galery/>} /> 
             <Route path='/contact' element={<Contact/>} /> 
 
             <Route path='/admin/login' element={<AdminLogin/>}/>
