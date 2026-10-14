@@ -12,9 +12,8 @@ import AdminLogin from './pages/Login.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
 
 
-function App() {
- 
 
+function App() {
   return (
     <Router>
       <NavBar/>

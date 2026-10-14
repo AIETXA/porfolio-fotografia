@@ -7,20 +7,27 @@
         <div className="contact-container">
         
           <div className="heading-wrapper">
-            <motion.h1 layoutId="contact-shared-title">Contacto</motion.h1>
+           
           </div>
           
           <div className="form">
 
-           <div className="form-group">
-             <input type="text" name="fullname" placeholder="Tu nombre" />
-             <label htmlFor="fullname"></label>
+           <div className="form-group-fullname">
+             <input type="text" name="name" placeholder="Tu Nombre" />
+             <label htmlFor="name"></label>
+             <input type="text" name="lastname" placeholder="Tu Apellido" />
+             <label htmlFor="lastname"></label>
            </div>
 
-           <div className="form-group">
+           
+
+           <div className="form-group-contact">
+             <input type="phone" name="phone" placeholder="Tu teléfono" />
+             <label htmlFor="phone"></label>
              <input type="email" name="email" placeholder="Tu email" />
              <label htmlFor="email"></label>
            </div>
+
 
            <div className="form-group">
              <textarea name="message" id="message" placeholder="Mensaje"></textarea>

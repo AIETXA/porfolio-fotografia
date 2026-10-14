@@ -50,9 +50,18 @@ function NavBar() {
             
 
                 <div className="nav-links">
-                    <MotionLink to="/galery" className="nav-link" layoutId="galery-shared-title">Galeria</MotionLink>
-                    <MotionLink to="/about" className="nav-link" layoutId="about-shared-title">Sobre mi</MotionLink>
-                    <MotionLink to="/contact" className="nav-link" layoutId="contact-shared-title">Contacto</MotionLink>
+                    <Link to="/galery" className="nav-link">
+                        Galeria
+                    </Link> 
+
+                    <Link to="/about" className="nav-link">
+                        Sobre mi
+                    </Link>
+
+                    <Link to="/contact" className="nav-link">
+                        Contacto
+                    </Link>
+                
                 </div>
 
 

@@ -7,21 +7,29 @@
 }
 
 
-
 .form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.form-group {
-    position: relative;
+.form-group-fullname {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap:7px;
+   
+    
+}
+.form-group-contact {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
 }
 
 
-.form-group input,
+.form-group-fullname input,
+.form-group-contact input,
 .form-group textarea {
     width: 100%;
     background: transparent;
@@ -40,20 +48,23 @@
     height: 100px;
 }
 
-.form-group input::placeholder,
+.form-group-fullname input::placeholder,
+.form-group-contact input::placeholder
 .form-group textarea::placeholder {
     color: var(--text);
     opacity: 0.4;
     letter-spacing: 0.05em;
 }
 
-.form-group input:hover::placeholder,
+.form-group-contact input:hover::placeholder,
+.form-group-fullname input:hover::placeholder,
 .form-group textarea:hover::placeholder {
     color: var(--text);
     opacity: 1; 
 }
 
-.form-group input:hover,
+.form-group-fullname input:hover,
+.form-group-contact input:hover,
 .form-group textarea:hover {
     
     border-bottom-color: var(--text);
