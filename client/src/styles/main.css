@@ -18,17 +18,15 @@
     --bg: var(--bg-light);
     --text: var(--text-light);
 
-    /*footer invertido-texto claro, fondo oscuro
-    --bg-footer: var(--bg-dark);
-    --text-footer: var(--text-dark);*/
+    /*sombras*/
+    --shadow-color: rgba(0, 0, 0, 0.15);
+   
 }
 
 [data-theme='dark'] {
     --bg: var(--bg-dark);
     --text: var(--text-dark);
-
-    /*--bg-footer: var(--bg-light);
-    --text-footer: var(--text-light);*/
+    --shadow-color: rgba(255, 255, 255, 0.08);
 
     .home-image {
       filter: grayscale(100%) contrast(150%);
@@ -66,3 +64,4 @@ body::before {
   padding-bottom: 120px;
   box-sizing: border-box;
 }
+

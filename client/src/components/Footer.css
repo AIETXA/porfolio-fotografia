@@ -36,8 +36,10 @@
     text-decoration: none;
 }
 
-.link:hover {
+
+.brand, .link:hover {
     letter-spacing: 0.08em;
+    font-weight: 600;
     transform: scaleX(1);
     
 }

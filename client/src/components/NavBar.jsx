@@ -30,30 +30,32 @@ function NavBar() {
     },[])
 
     return (
-        <nav ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
+        
+            <nav ref={navbar} className={`navbar ${menuOpen ? 'active' : ''}`}>
+                
+                <button className="menu-burger" onClick={toggleBurger}>
+                    <span className="material-symbols-outlined">menu</span>
+                </button>
+
             
-            <button className="menu-burger" onClick={toggleBurger}>
-                <span className="material-symbols-outlined">menu</span>
-            </button>
 
+                <Link to="/" className="logo"> 
+                    aietxa | photografy
+                </Link> 
+            
+
+                <div className="nav-links">
+                    <Link to="/porfolio" className="nav-link">Galeria</Link>
+                    <Link to="/about" className="nav-link">Sobre mi</Link>
+                    <Link to="/contact" className="nav-link">Contacto</Link>
+                </div>
+
+
+                <button className="btn-light-dark" onClick={toggleTheme}>
+                    {theme === 'light' ? <FontAwesomeIcon icon={faSun}/> : <FontAwesomeIcon icon={faMoon} />}
+                </button>
+            </nav>
         
-
-            <Link to="/" className="logo"> 
-                aietxa | photografy
-            </Link> 
-        
-
-            <div className="nav-links">
-                <Link to="/porfolio" className="nav-link">Galeria</Link>
-                <Link to="/about" className="nav-link">Sobre mi</Link>
-                <Link to="/contact" className="nav-link">Contacto</Link>
-            </div>
-
-
-            <button className="btn-light-dark" onClick={toggleTheme}>
-                {theme === 'light' ? <FontAwesomeIcon icon={faSun}/> : <FontAwesomeIcon icon={faMoon} />}
-            </button>
-    </nav>
     
     )
 }
