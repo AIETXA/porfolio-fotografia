@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 function Porfolio() {
      return (
         <main className="porfolio-container">
-          <h1>Portafolio</h1>
+          <h1>Galeria</h1>
             <div className="porfolio-slider">
               <Swiper modules={[Navigation, Pagination]} navigation pagination>
                 <SwiperSlide><img src="" alt=""/></SwiperSlide>

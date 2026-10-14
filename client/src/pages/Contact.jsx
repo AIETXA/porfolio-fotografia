@@ -1,11 +1,13 @@
  import '../styles/contact.css'
+ import { motion } from 'framer-motion'
  
  function Contact() {
      return (
+ 
         <div className="contact-container">
         
           <div className="heading-wrapper">
-           
+            <motion.h1 layoutId="contact-shared-title">Contacto</motion.h1>
           </div>
           
           <div className="form">

@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
 import { useTheme } from "../hooks/useTheme"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons"
+
+
+const MotionLink = motion(Link);
+
 
 function NavBar() {
 
@@ -45,9 +50,9 @@ function NavBar() {
             
 
                 <div className="nav-links">
-                    <Link to="/porfolio" className="nav-link">Galeria</Link>
-                    <Link to="/about" className="nav-link">Sobre mi</Link>
-                    <Link to="/contact" className="nav-link">Contacto</Link>
+                    <MotionLink to="/galery" className="nav-link" layoutId="galery-shared-title">Galeria</MotionLink>
+                    <MotionLink to="/about" className="nav-link" layoutId="about-shared-title">Sobre mi</MotionLink>
+                    <MotionLink to="/contact" className="nav-link" layoutId="contact-shared-title">Contacto</MotionLink>
                 </div>
 
 

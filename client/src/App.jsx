@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
+import { AnimatePresence } from 'framer-motion';
 
 import Home from './pages/Home.jsx'
 import AboutMe from './pages/AboutMe.jsx'
@@ -17,22 +18,25 @@ function App() {
   return (
     <Router>
       <NavBar/>
-      <div className='app-container'>
-          <Routes>
-            <Route path='/' element={<Home/>} /> 
-            <Route path='/about' element={<AboutMe/>} /> 
-            <Route path='/galery' element={<Galery/>} /> 
-            <Route path='/contact' element={<Contact/>} /> 
+      <AnimatePresence mode="wait">
+        <div className='app-container'>
+            <Routes>
+              <Route path='/' element={<Home/>} /> 
+              <Route path='/about' element={<AboutMe/>} /> 
+              <Route path='/galery' element={<Galery/>} /> 
+              <Route path='/contact' element={<Contact/>} /> 
 
-            <Route path='/admin/login' element={<AdminLogin/>}/>
+              <Route path='/admin/login' element={<AdminLogin/>}/>
 
 
-            <Route element={<ProtectAdmin/>}/>
-              <Route path='/admin' element={<h1>admin panel</h1>}/>
+              <Route element={<ProtectAdmin/>}/>
+                <Route path='/admin' element={<h1>admin panel</h1>}/>
 
-              
-          </Routes>
-      </div> 
+                
+            </Routes>
+
+        </div> 
+     </AnimatePresence> 
     <Footer/>
     </Router>
   )
