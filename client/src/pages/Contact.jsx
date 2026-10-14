@@ -1,9 +1,11 @@
+ import '../styles/contact.css'
+ 
  function Contact() {
      return (
-        <>
+        <div className="contact-container">
         
           <div className="heading-wrapper">
-            <h1>Contacto</h1>
+           
           </div>
           
           <div className="form">
@@ -31,7 +33,7 @@
 
          </div>
          
-        </>
+        </div>
     
       )
     }
