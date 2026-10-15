@@ -1,14 +1,11 @@
  import '../styles/contact.css'
- import { motion } from 'framer-motion'
+
  
  function Contact() {
      return (
  
         <div className="contact-container">
         
-          <div className="heading-wrapper">
-           
-          </div>
           
           <div className="form">
 

@@ -1,24 +1,35 @@
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { useLocation } from "react-router-dom"
 import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
 import { useTheme } from "../hooks/useTheme"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 
 
-const MotionLink = motion(Link);
 
 
 function NavBar() {
 
     const [ menuOpen, setMenuOpen ] = useState(false)
+    const [ isScrolled, setIsScrolled ] = useState(false)
     const navbar = useRef(null)
+    const location = useLocation()
+    const { scrollY } = useScroll()
     
+    useMotionValueEvent(scrollY, 'change', (latest) => {
+        if(latest > 25) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
+    })
+
     const toggleBurger = () => {setMenuOpen(!menuOpen)}
-    
     const { theme, toggleTheme } = useTheme();
+
 
 
     useEffect(() => {
@@ -33,6 +44,8 @@ function NavBar() {
             document.removeEventListener('mousedown', handleClickOutside)
         }
     },[])
+
+    const isLinkActive = (path) => location.pathname === path && !isScrolled
 
     return (
         
@@ -50,16 +63,49 @@ function NavBar() {
             
 
                 <div className="nav-links">
+
                     <Link to="/galery" className="nav-link">
-                        Galeria
+                        <motion.span 
+                            animate={{
+                                y: isLinkActive('/galery') ? 48 : 0,
+                                scale: isLinkActive('/galery') ? 1.5 : 1
+                            }}
+                            transition={{type: 'spring', stiffness: 200, damping: 25 }}
+                            style={{ display: 'inline-block', fontSize: '300'}}
+                        >
+                            <span>Galeria</span>
+                            <div className="nav-underline" />
+                        </motion.span>
                     </Link> 
 
                     <Link to="/about" className="nav-link">
-                        Sobre mi
+                        <motion.span
+                            animate={{
+                                y: isLinkActive ('/about') ? 48 : 0,
+                                scale: isLinkActive ('/about') ? 1.5 : 1
+                            }}
+                            transition={{ type:'spring', stiffness: 200, damping: 25 }}
+                            style={{ display: 'inline-block'}}
+                        >
+                            <span>Sobre mi</span>
+                            <div className="nav-underline" />
+                        </motion.span>
+                        
                     </Link>
 
                     <Link to="/contact" className="nav-link">
-                        Contacto
+                        <motion.span
+                            animate={{
+                                y: isLinkActive ('/contact') ? 48 : 0,
+                                scale: isLinkActive ('/contact') ? 1.5 : 1
+                            }}
+                            transition={{ type:'spring', stiffness: 200, damping: 25 }}
+                            style={{ display: 'inline-block'}}
+                        >
+                            <span>Contacto</span>
+                            <div className="nav-underline" />
+                        </motion.span>
+                       
                     </Link>
                 
                 </div>

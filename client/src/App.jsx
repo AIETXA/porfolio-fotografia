@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
-import { AnimatePresence } from 'framer-motion';
+
 
 import Home from './pages/Home.jsx'
 import AboutMe from './pages/AboutMe.jsx'
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <NavBar/>
-      <AnimatePresence mode="wait">
+      
         <div className='app-container'>
             <Routes>
               <Route path='/' element={<Home/>} /> 
@@ -35,7 +35,7 @@ function App() {
             </Routes>
 
         </div> 
-     </AnimatePresence> 
+     
     <Footer/>
     </Router>
   )
