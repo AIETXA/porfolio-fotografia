@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
-import './NavBar.css'
 import { useEffect, useState, useRef } from 'react'
 import { useTheme } from "../hooks/useTheme"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import './NavBar.css'
 
 
 
