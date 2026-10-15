@@ -1,11 +1,16 @@
 
-import { Link } from "react-router-dom";
-import './Footer.css'
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons"
+import './Footer.css'
+
+
 
 
 function Footer() {
     const [ isVisible, setIsVisible ] = useState(false);
+    const location = useLocation()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,7 +36,14 @@ function Footer() {
         
                 <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
 
-                <Link to="/contact" className="link">Contacto</Link>
+                {location.pathname === '/contact' ? (
+                    <span className="phone-contact">
+                        <FontAwesomeIcon icon={faPhone}/>+34685745445
+                    </span>
+                ) : (
+                    <Link to="/contact" className="link">Contacto</Link>
+                )
+                }
             </div>
         </footer>
     )
