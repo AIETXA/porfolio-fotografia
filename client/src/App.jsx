@@ -10,6 +10,7 @@ import Contact from './pages/Contact.jsx'
 import Galery from './pages/Galery.jsx'
 import AdminLogin from './pages/Login.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
+import AdminPanel from './components/AdminPanel.jsx'
 
 
 
@@ -29,7 +30,7 @@ function App() {
 
 
               <Route element={<ProtectAdmin/>}/>
-                <Route path='/admin' element={<h1>admin panel</h1>}/>
+                <Route path='/admin' element={<AdminPanel/>}/>
 
                 
             </Routes>

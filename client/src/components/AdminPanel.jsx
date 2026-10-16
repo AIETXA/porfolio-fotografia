@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import './AdminPanel.css'
+
 
 
 export default function AdminPanel() {
@@ -6,7 +8,8 @@ export default function AdminPanel() {
     const [ file, setFile ] = useState(null);
     const [ preview, setPreview ] = useState(null);
     const [ loading, setLoading ] = useState(false);
-    const [ message, setMessage ] = useState(' ')
+    const [ message, setMessage ] = useState(' ');
+    const [ isError, setIsError ] = useState(false)
 
     
     const handleFileChange = (e) => {
@@ -54,15 +57,18 @@ export default function AdminPanel() {
 
             if(response.ok) {
                 setMessage('Imagen subida y guardada con éxito');
+                setIsError(false)
                 setTitle('');
                 setFile(null);
                 setPreview(null);
             } else {
                 setMessage(data.message || 'Error al subir la imagen');
+                
             }
         } catch (error) {
             console.error(error);
             setMessage('Error de red al conectar con el servidor')
+            setIsError(true)
         } finally {
             setLoading(false);
         }
@@ -99,7 +105,7 @@ export default function AdminPanel() {
                     {loading ? 'Subiendo a Cloudinary...' : 'Guardar y publicar'}
                 </button>
 
-                {message && <p className={`admin-message ${loading ? '' : 'fade-in'}`}>{message}</p>}
+                {message && <p className={`admin-message ${isError ? 'error' : 'success'} ${loading ? '' : 'fade-in'}`}>{message}</p>}
             </form>        
         </div>
     );
