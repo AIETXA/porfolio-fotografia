@@ -9,7 +9,8 @@ export default function AdminPanel() {
     const [ preview, setPreview ] = useState(null);
     const [ loading, setLoading ] = useState(false);
     const [ message, setMessage ] = useState(' ');
-    const [ isError, setIsError ] = useState(false)
+    const [ isError, setIsError ] = useState(false);
+    const [ category, setCategory ] = useState('')
 
     
     const handleFileChange = (e) => {
@@ -46,6 +47,7 @@ export default function AdminPanel() {
         const formData = new FormData();
         formData.append('image', file);
         formData.append('title', title);
+        formData.append('category', category);
 
         try {
             const response = await fetch('http://localhost:5000/api/photos', {
@@ -59,6 +61,7 @@ export default function AdminPanel() {
                 setMessage('Imagen subida y guardada con éxito');
                 setIsError(false)
                 setTitle('');
+                setCategory('');
                 setFile(null);
                 setPreview(null);
             } else {
@@ -83,6 +86,9 @@ export default function AdminPanel() {
                 <div className="form-group">
                     <label>Título</label>
                     <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
+                    <label>Categoria</label>
+                    <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required/>
+                
                 </div>
 
                 <div className="dropzone-area" onDragOver={handleDragOver} onDrop={handleDrop}>
