@@ -1,0 +1,71 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    color: var(--text);
+}
+
+
+.login-container h2 {
+    margin-top: 200px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.form-container {
+    display: flex;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 32px; 
+    background-color: var(--bg);
+    border: 1px solid var(--text);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    gap:15px;
+}
+.form-container input {
+    background-color: var(--bg); 
+    border: 1px solid var(--text);
+    opacity: 80%;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: var(--text);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-container input:hover {
+    opacity: 2;
+    border-color: var(--text);
+   
+    
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--error);
+}
+
+.btn-login {
+    background-color: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login:hover:not(:disabled) {
+    opacity: 95%;
+    transform: translateY(-2px); 
+    box-shadow: 0 3px 6px color-mix(in srgb, var(--text) 25%, transparent);
+}

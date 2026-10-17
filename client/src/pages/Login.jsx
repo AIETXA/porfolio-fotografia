@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import '../styles/login.css'
 
 function AdminLogin() {
   const [mensaje, setMensaje] = useState('');
@@ -40,15 +41,15 @@ try {
 
 
 return (
- <div style={{ padding: '2rem' }}>
+    <div className='login-container'>
         <h2>Iniciar Sesión</h2>
       
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="admin" placeholder="Usuario admin" required />
+        <form className='form-container' onSubmit={handleSubmit}>
+            <input type="text" name="admin" placeholder="Usuario" required />
             <input type="password" name="pass" placeholder="Contraseña" required />
-            <button type="submit">Entrar</button>
+            <button className='btn-login' type="submit">Entrar</button>
         </form>
-     {mensaje && <p style={{color:'red'}}>{mensaje}</p>}
+     {mensaje && <p className='message'>{mensaje}</p>}
 
     </div>
 )
