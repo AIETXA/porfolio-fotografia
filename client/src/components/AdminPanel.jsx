@@ -12,7 +12,7 @@ export default function AdminPanel() {
     const [ isError, setIsError ] = useState(false);
     const [ category, setCategory ] = useState('')
 
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://porfolio-fotografia.onrender.com';
     
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
