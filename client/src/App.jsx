@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext.jsx'
 import NavBar from './components/NavBar.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -16,29 +17,31 @@ import AdminPanel from './components/AdminPanel.jsx'
 
 function App() {
   return (
-    <Router>
-      <NavBar/>
+    <AuthProvider>
+      <Router>
+        <NavBar/>
+        
+          <div className='app-container'>
+              <Routes>
+                <Route path='/' element={<Home/>} /> 
+                <Route path='/about' element={<AboutMe/>} /> 
+                <Route path='/galery' element={<Galery/>} /> 
+                <Route path='/contact' element={<Contact/>} /> 
+
+                <Route path='/admin/login' element={<AdminLogin/>}/>
+
+
+                <Route element={<ProtectAdmin/>}>
+                  <Route path='/admin' element={<AdminPanel/>}/>
+                </Route>
+                  
+              </Routes>
+
+          </div> 
       
-        <div className='app-container'>
-            <Routes>
-              <Route path='/' element={<Home/>} /> 
-              <Route path='/about' element={<AboutMe/>} /> 
-              <Route path='/galery' element={<Galery/>} /> 
-              <Route path='/contact' element={<Contact/>} /> 
-
-              <Route path='/admin/login' element={<AdminLogin/>}/>
-
-
-              <Route element={<ProtectAdmin/>}/>
-                <Route path='/admin' element={<AdminPanel/>}/>
-
-                
-            </Routes>
-
-        </div> 
-     
-    <Footer/>
-    </Router>
+        <Footer/>
+      </Router>
+    </AuthProvider>
   )
 }
 

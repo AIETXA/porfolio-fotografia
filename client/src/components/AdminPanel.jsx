@@ -12,6 +12,7 @@ export default function AdminPanel() {
     const [ isError, setIsError ] = useState(false);
     const [ category, setCategory ] = useState('')
 
+    const apiUrl = import.meta.env.VITE_API_URL;
     
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -44,14 +45,19 @@ export default function AdminPanel() {
         setLoading(true);
         setMessage('');
 
+        const token = localStorage.getItem('token');
+
         const formData = new FormData();
         formData.append('image', file);
         formData.append('title', title);
         formData.append('category', category);
 
+       
+
         try {
-            const response = await fetch('http://localhost:5000/api/photos', {
+            const response = await fetch(`${apiUrl}/photos`, {
                 method: 'POST',
+                headers: {'Authorization': `Bearer ${token}`},
                 body: formData,
             });
 

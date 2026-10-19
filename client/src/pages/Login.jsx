@@ -6,7 +6,7 @@ import '../styles/login.css'
 function AdminLogin() {
   const [mensaje, setMensaje] = useState('');
   const navigate = useNavigate();
-  const login = useAuth();
+  const { login } = useAuth();
   const apiUrl = import.meta.env.VITE_API_URL;
 
 
@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
 
  
 try {
-    const res = await fetch(`${apiUrl}/admin/login`, {
+    const res = await fetch(`${apiUrl}/auth/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ admin, pass })
@@ -29,6 +29,7 @@ try {
         return;
     }
     const data = await res.json();
+   
 
     login(data.token)
     navigate('/admin');
