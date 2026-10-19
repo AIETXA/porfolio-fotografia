@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
 
  
 try {
-    const res = await fetch(`${apiUrl}/auth/admin/login`, {
+    const res = await fetch(`${apiUrl}/api/auth/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ admin, pass })
