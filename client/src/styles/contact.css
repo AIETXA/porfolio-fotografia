@@ -42,7 +42,7 @@
 }
 
 .form-group-fullname input::placeholder,
-.form-group-contact input::placeholder
+.form-group-contact input::placeholder,
 .form-group textarea::placeholder {
     color: var(--text);
     opacity: 0.4;
