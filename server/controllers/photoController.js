@@ -66,6 +66,49 @@ export const getAllPhotos = async(req,res) => {
     }
 };
 
+export const getPhotoById = async(req, res) => {
+    try{
+        const {id} = req.params;
+        const photoDetail = await Photo.findById(id);
+
+        if(!photoDetail) {
+            return res.status(404).json({message: 'Foto no encontrada'});
+        }
+        res.status(200).json(photoDetail);
+    } catch (error) {
+        console.error('Error al intentar obtener la foto', error);
+        res.status(500).json({message: 'Error interno del servidor'})
+    }
+};
+
+export const updatePhoto = async(req, res) => {
+    try{
+        const { id } = req.params;
+        const { title, category } = req.body;
+
+        const updateData = {};
+        if (title !== undefined) updateData.title = title;
+        if (category !== undefined) updateData.category = category.toLowerCase();
+    
+        const updatedPhoto = await Photo.findByIdAndUpdate(id, updateData, {
+            new: true,
+            runValidators: true
+        });
+
+        if(!updatedPhoto) {
+            return res.status(404).json({message: 'Foto no encontrada'});
+        }
+
+        res.status(200).json({
+            message: 'Foto actualizada',
+            photo: updatedPhoto
+        });
+    } catch (error) {
+        console.error('Error al actualizar la foto', error);
+        res.status(500).json({message: 'Error interno del servidor'});
+    }
+};
+
 export const deletePhoto = async(req, res) => {
     try {
         const {id} = req.params;

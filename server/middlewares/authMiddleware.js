@@ -21,5 +21,5 @@ export function authMiddleware(req,res,next) {
         console.error(error)
         res.status(401).json({message:'Error de autenticacion'})
     }
-}
+};
 
