@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react"
+/*import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 function Porfolio() {
      return (
         <main className="porfolio-container">
-          <h1>Galeria</h1>
+          <h1></h1>
             <div className="porfolio-slider">
               <Swiper modules={[Navigation, Pagination]} navigation pagination>
                 <SwiperSlide><img src="" alt=""/></SwiperSlide>
@@ -24,4 +24,4 @@ function Porfolio() {
       )
     }
    
-export default Porfolio
+export default Porfolio*/

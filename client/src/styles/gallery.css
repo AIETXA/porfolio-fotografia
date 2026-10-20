@@ -1,0 +1,22 @@
+.my-masonry-grid {
+  display: flex;
+  margin-left: -1rem; /* Ajusta según el espacio deseado (gutter) */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 1rem; /* Espacio entre columnas */
+  background-clip: padding-box;
+}
+
+/* Estilo opcional para las tarjetas de las fotos dentro del masonry */
+.gallery-item {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  height: auto;
+}

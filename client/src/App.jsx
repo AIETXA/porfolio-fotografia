@@ -8,7 +8,7 @@ import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import AboutMe from './pages/AboutMe.jsx'
 import Contact from './pages/Contact.jsx'
-import Galery from './pages/Galery.jsx'
+import Gallery from './pages/Gallery.jsx'
 import AdminLogin from './pages/Login.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
 import AdminPanel from './components/AdminPanel.jsx'
@@ -25,9 +25,9 @@ function App() {
               <Routes>
                 <Route path='/' element={<Home/>} /> 
                 <Route path='/about' element={<AboutMe/>} /> 
-                <Route path='/galery' element={<Galery/>} /> 
+                <Route path='/gallery' element={<Gallery/>} /> 
                 <Route path='/contact' element={<Contact/>} /> 
-
+                
                 <Route path='/admin/login' element={<AdminLogin/>}/>
 
 

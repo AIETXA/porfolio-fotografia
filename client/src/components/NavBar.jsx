@@ -64,11 +64,11 @@ function NavBar() {
 
                 <div className="nav-links">
 
-                    <Link to="/galery" className="nav-link">
+                    <Link to="/gallery" className="nav-link">
                         <motion.span 
                             animate={{
-                                y: isLinkActive('/galery') ? 48 : 0,
-                                scale: isLinkActive('/galery') ? 1.5 : 1
+                                y: isLinkActive('/gallery') ? 48 : 0,
+                                scale: isLinkActive('/gallery') ? 1.5 : 1
                             }}
                             transition={{type: 'spring', stiffness: 200, damping: 25 }}
                             style={{ display: 'inline-block', fontSize: '300'}}
