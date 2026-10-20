@@ -2,6 +2,7 @@
   display: flex;
   margin-left: -1rem; /* Ajusta según el espacio deseado (gutter) */
   width: auto;
+  background-color: red;
 }
 .my-masonry-grid_column {
   padding-left: 1rem; /* Espacio entre columnas */
@@ -19,4 +20,8 @@
   width: 100%;
   display: block;
   height: auto;
+}
+
+.gallery-view {
+    background-color: rebeccapurple;
 }
