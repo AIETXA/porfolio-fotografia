@@ -15,7 +15,7 @@ export default function Gallery({ photos = photosFalsas }) {
     const navigate = useNavigate();
     const [ selectedCategory, setSelectedCategory ] = useState('all');
 
-    const categories = ['all', ...new Set(photos?.map((p) => p.category))];
+    const categories = ['all', ...new Set(photos?.map((p) => p.category) || [])];
 
     const filteredPhotos = selectedCategory === 'all'
       ? photos
@@ -32,6 +32,7 @@ export default function Gallery({ photos = photosFalsas }) {
 
   return (
     <div className="gallery-view">
+      
       <div className="filters">
         {categories.map((category) => (
           <button
@@ -52,6 +53,7 @@ export default function Gallery({ photos = photosFalsas }) {
           </div>
         ))}
       </Masonry>
+      
     </div>
   )
 };

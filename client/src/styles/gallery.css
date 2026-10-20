@@ -1,27 +1,72 @@
+
+.gallery-view {
+    position: relative; 
+    top: 100px;
+    padding:10px;
+    background: var(--bg);
+    min-height: 400px;
+    box-sizing: border-box;
+    color: var(--text);
+
+   
+}
+
+/* Estilos de los botones de filtro */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filters button {
+  padding: 8px 16px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.filters button.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Estructura de columnas para react-masonry-css */
 .my-masonry-grid {
   display: flex;
-  margin-left: -1rem; /* Ajusta según el espacio deseado (gutter) */
+  margin-left: -15px; /* gutter size offset */
   width: auto;
-  background-color: red;
 }
 .my-masonry-grid_column {
-  padding-left: 1rem; /* Espacio entre columnas */
+  padding-left: 15px; /* gutter size */
   background-clip: padding-box;
 }
 
-/* Estilo opcional para las tarjetas de las fotos dentro del masonry */
-.gallery-item {
-  margin-bottom: 1rem;
-  cursor: pointer;
+/* Cada tarjeta de foto individual (inspirado en tu ejemplo) */
+.grid-item {
+  margin-bottom: 15px;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.gallery-item img {
+.grid-item img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  height: auto;
 }
 
-.gallery-view {
-    background-color: rebeccapurple;
+/* Variaciones de altura para imitar el efecto mosaico */
+.grid-item--height2 {
+  height: 280px;
+}
+
+.grid-item--height3 {
+  height: 360px;
 }
