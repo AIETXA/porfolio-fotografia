@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Masonry from 'react-masonry-css' 
 import { useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import '../styles/gallery.css'
 
 
@@ -32,6 +34,11 @@ export default function Gallery({ photos = photosFalsas }) {
 
   return (
     <div className="gallery-view">
+      <div className="searcher">
+        <input type="text" name="search" id="search" placeholder="Buscar..."/>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
+        
+      </div>  
       
       <div className="filters">
         {categories.map((category) => (

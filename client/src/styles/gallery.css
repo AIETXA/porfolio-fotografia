@@ -11,6 +11,44 @@
    
 }
 
+.searcher {
+   
+    padding: 1rem 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+  
+
+.searcher input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text);
+    padding: 1rem;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.searcher input:hover {
+    border-bottom-color: var(--text);
+    border-bottom-width: 2px; 
+}
+
+.searcher input:hover::placeholder {
+    color: var(--text);
+    opacity: 0.9;
+}
+    
+.search-icon {
+  padding-left: 10px;
+  opacity: 70%;
+}
+
+
+
 /* Estilos de los botones de filtro */
 .filters {
   display: flex;
