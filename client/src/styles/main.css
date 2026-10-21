@@ -71,3 +71,13 @@ body::before {
   
 }
 
+@media (max-width: 900px) {
+  .app-container {
+      position: absolute;
+      z-index: 1;
+      margin-bottom: 0px;
+      padding-bottom: 130px;
+
+  } 
+}
+

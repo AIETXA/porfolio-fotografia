@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import logoClaro from '../assets/logo-claro.png'
+import logoOscuro from '../assets/logo-oscuro.png'
 import './NavBar.css'
 
 
@@ -15,10 +17,21 @@ function NavBar() {
 
     const [ menuOpen, setMenuOpen ] = useState(false)
     const [ isScrolled, setIsScrolled ] = useState(false)
+    const [ isMobile, setIsMobile ] = useState(window.innerWidth <= 900)
     const navbar = useRef(null)
     const location = useLocation()
     const { scrollY } = useScroll()
     
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 900)
+        }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+
     useMotionValueEvent(scrollY, 'change', (latest) => {
         if(latest > 25) {
             setIsScrolled(true)
@@ -58,7 +71,7 @@ function NavBar() {
             
 
                 <Link to="/" className="logo"> 
-                    aietxa | photografy
+                   <img src={theme === 'light' ? logoOscuro : logoClaro} alt="Logo-aietxa" />
                 </Link> 
             
 
@@ -67,8 +80,8 @@ function NavBar() {
                     <Link to="/gallery" className="nav-link">
                         <motion.span 
                             animate={{
-                                y: isLinkActive('/gallery') ? 48 : 0,
-                                scale: isLinkActive('/gallery') ? 1.5 : 1
+                                y: isLinkActive('/gallery') && !isMobile ? 48 : 0,
+                                scale: isLinkActive('/gallery') && !isMobile ? 1.5 : 1
                             }}
                             transition={{type: 'spring', stiffness: 200, damping: 25 }}
                             style={{ display: 'inline-block', fontSize: '300'}}
@@ -81,8 +94,8 @@ function NavBar() {
                     <Link to="/about" className="nav-link">
                         <motion.span
                             animate={{
-                                y: isLinkActive ('/about') ? 48 : 0,
-                                scale: isLinkActive ('/about') ? 1.5 : 1
+                                y: isLinkActive ('/about') && !isMobile ? 48 : 0,
+                                scale: isLinkActive ('/about') && !isMobile ? 1.5 : 1
                             }}
                             transition={{ type:'spring', stiffness: 200, damping: 25 }}
                             style={{ display: 'inline-block'}}
@@ -96,8 +109,8 @@ function NavBar() {
                     <Link to="/contact" className="nav-link">
                         <motion.span
                             animate={{
-                                y: isLinkActive ('/contact') ? 48 : 0,
-                                scale: isLinkActive ('/contact') ? 1.5 : 1
+                                y: isLinkActive ('/contact') && !isMobile ? 48 : 0,
+                                scale: isLinkActive ('/contact') && !isMobile ? 1.5 : 1
                             }}
                             transition={{ type:'spring', stiffness: 200, damping: 25 }}
                             style={{ display: 'inline-block'}}

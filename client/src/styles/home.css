@@ -30,7 +30,7 @@
     width: 100%;
     height: fit-content;
     display: block;
-    margin-top: 40px;
+    margin-top: 80px;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -57,14 +57,14 @@
 
 /* --- EFECTO HOVER --- */
 .home-layout:hover .home-image {
-    opacity: 0.55; /* La imagen se desvanece suavemente */
-    transform: scale(1.01); /* Sutil zoom estético */
+    opacity: 0.55;
+    transform: scale(1.01); 
 }
 
 .home-layout:hover .hover-reveal-text i,
 .home-layout:hover .hover-reveal-text {
-    opacity: 2; /* Aparece el texto "mi galería" */
-    transform: translateY(60%); /* Se desliza con suavidad a su sitio */
+    opacity: 2;
+    transform: translateY(60%); 
   
 }
 
