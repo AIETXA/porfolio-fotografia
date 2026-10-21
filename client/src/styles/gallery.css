@@ -1,24 +1,28 @@
 
 .gallery-view {
-    position: relative; 
+    position: relative;
     top: 100px;
-    padding:10px;
+   
     background: var(--bg);
     min-height: 400px;
-    box-sizing: border-box;
-    color: var(--text);
-
    
+    color: var(--text);
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem 3vw; /* Ajusta el margen lateral general aquí si lo deseas */
+    overflow-x: hidden;
+    border: 2px dashed rgba(0, 150, 255, 0.4);
 }
 
 .searcher {
-   
     padding: 1rem 0;
     color: var(--text);
     font-size: 1rem;
     font-family: inherit;
     outline: none;
     transition: border-color 0.3s ease;
+  
 }
   
 
@@ -41,7 +45,7 @@
     color: var(--text);
     opacity: 0.9;
 }
-    
+
 .search-icon {
   padding-left: 10px;
   opacity: 70%;
@@ -54,57 +58,87 @@
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
+ 
 }
 
 .filters button {
   padding: 8px 16px;
   border: none;
-  background: #ddd;
+  background: var(--bg);
   cursor: pointer;
   border-radius: 4px;
   font-weight: bold;
 }
+.filters button:hover {
+    color: var(--text);
+    opacity: 0.5;
+}
 
 .filters button.active {
-  background: #333;
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
+  opacity: 40%;
 }
+
 
 /* Estructura de columnas para react-masonry-css */
-.my-masonry-grid {
-  display: flex;
-  margin-left: -15px; /* gutter size offset */
-  width: auto;
+.gallery-grid {
+  width: 1500px;
+  margin: 10px;
+  columns: 4;
+  overflow-x: hidden;
+  border: 2px dotted rgba(239, 9, 136, 0.797);
+
 }
-.my-masonry-grid_column {
-  padding-left: 15px; /* gutter size */
+
+.masonry-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  column-gap: 10px;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 2px dotted rgba(3, 79, 31, 0.797);
+  
+}
+
+
+.masonry-gallery_column {
+  padding-left: 16px;
   background-clip: padding-box;
+  border: 3px dotted rgba(128, 0, 128, 0.3);
+  
 }
 
-/* Cada tarjeta de foto individual (inspirado en tu ejemplo) */
-.grid-item {
-  margin-bottom: 15px;
-  background: #D26;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+.masonry-item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid red;
+    border-radius: 10px;
 }
 
-.grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-/* Variaciones de altura para imitar el efecto mosaico */
-.grid-item--height2 {
-  height: 280px;
+.masonry-item:hover img {
+    transform: scale(1.02);
 }
 
-.grid-item--height3 {
-  height: 360px;
+
+@media  (max-width: 900px) {
+  .searcher input {
+    margin-top: 60px;
+}
+
+.gallery-view {
+        padding: 1rem 3vw;
+    }
 }
