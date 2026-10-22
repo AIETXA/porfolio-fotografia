@@ -15,7 +15,7 @@ export default function Gallery() {
     
     useEffect(() => {
       const apiUrl = import.meta.env.VITE_API_URL;
-      fetch(`${apiUrl}/photos`)
+      fetch(`${apiUrl}/api/photos`)
       .then(res => res.json())
       .then(data => setPhotos(data))
       .catch(err => console.error('Error al cargar las fotos:', err))
@@ -70,7 +70,7 @@ export default function Gallery() {
         <Masonry breakpointCols={breakpointColumnsObj} className="masonry-gallery" columnClassName="my-masonry-grid_column">
           {filteredPhotos.map(photo => (
             <div className="item" key={photo._id} onClick={() => navigate(`/photo/${photo._id}`)}>
-              <img src={photo.imageUrl} alt={photo.title} />
+              <img src={photo.imageUrl} alt={photo.title || 'Foto'}  />
             </div>
           ))}
         </Masonry>
