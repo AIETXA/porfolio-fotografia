@@ -55,7 +55,7 @@ export default function AdminPanel() {
        
 
         try {
-            const response = await fetch(`${apiUrl}/photos`, {
+            const response = await fetch(`${apiUrl}/api/photos`, {
                 method: 'POST',
                 headers: {'Authorization': `Bearer ${token}`},
                 body: formData,
