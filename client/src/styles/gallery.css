@@ -10,9 +10,10 @@
     width: 100vw;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 1.5rem 3vw; /* Ajusta el margen lateral general aquí si lo deseas */
+    padding: 1.5rem 3vw; 
+    padding-bottom: 60px;
     overflow-x: hidden;
-    border: 2px dashed rgba(0, 150, 255, 0.4);
+    
 }
 
 .searcher {
@@ -62,22 +63,27 @@
 }
 
 .filters button {
-  padding: 8px 16px;
-  border: none;
-  background: var(--bg);
+  color: var(--bg);
+  background: var(--text);
+  opacity: 50%;
   cursor: pointer;
   border-radius: 4px;
-  font-weight: bold;
+  border: 1px solid var(--text);
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 .filters button:hover {
+    background: transparent;
     color: var(--text);
-    opacity: 0.5;
+    transform: translateY(-2px); 
+    
 }
 
 .filters button.active {
   background: var(--text);
   color: var(--bg);
-  opacity: 40%;
+  
 }
 
 
@@ -91,28 +97,30 @@
 
 .masonry-gallery {
   display: flex;
-  margin-left: -16px; /* Compensación para el espacio entre columnas */
+  gap: 27px;
+  margin-top: 25px;
   width: auto;
   
 }
 
 
 .my-masonry-gallery_column {
-  padding-left: 16px;
+  
   background-clip: padding-box;
-  border: 3px dotted rgba(128, 0, 128, 0.3);
+  
   
 }
 
 .item {
     width: 100%;
-    margin-left: -16px; /* Compensación para el espacio entre columnas */
+    margin-left: -16px;
+    margin-bottom: 10px;
     width: auto;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     background: var(--bg);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .item img {
@@ -125,16 +133,17 @@
 
 .item:hover img {
     transform: scale(1.02);
-    opacity: 0.05;
+    opacity: 0.21;
 }
 
 
 @media  (max-width: 900px) {
   .searcher input {
     margin-top: 60px;
-}
+  }
 
-.gallery-view {
-        padding: 1rem 3vw;
-    }
+  .gallery-view {
+    padding: 1rem 3vw;
+    padding-bottom: 70px;
+  }
 }

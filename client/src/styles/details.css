@@ -1,0 +1,100 @@
+/* Fondo completo tipo Modal con desenfoque */
+.details-overlay, .details-slaider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(12, 12, 12, 0.96);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón cerrar */
+.btn-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2010;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.swiper-container {
+  width: 90%;
+  height: 85vh;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slaide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slaide-content img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Título y categoría debajo de la foto */
+.photo-caption {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.photo-caption h3 {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
+}
+
+.category-tag {
+  color: #888888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Personalización elegante de las flechas de Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.8rem !important; /* Flechas más delicadas y sutiles */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
