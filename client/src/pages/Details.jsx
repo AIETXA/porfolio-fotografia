@@ -6,10 +6,8 @@ import 'swiper/css/pagination'
 import { useParams } from 'react-router-dom';
 
 
-export default function Details({ photos = [] }) {
-  const { id } = useParams(); // Aquí capturas el "123" de la URL
-
-  // Buscas la foto seleccionada o inicializas tu Swiper basado en este id
+export default function Details() {
+  const { id } = useParams(); 
   
   const currentPhoto = photos.find(p => p.id.toString() === id);
 

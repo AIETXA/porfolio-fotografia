@@ -83,53 +83,49 @@
 
 /* Estructura de columnas para react-masonry-css */
 .gallery-grid {
-  width: 1500px;
-  margin: 10px;
-  columns: 4;
-  overflow-x: hidden;
-  border: 2px dotted rgba(239, 9, 136, 0.797);
-
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
 }
 
 .masonry-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
-  column-gap: 10px;
-  justify-content: center;
-  width: 100vw;
-  max-width: 100%;
-  box-sizing: border-box;
-  border: 2px dotted rgba(3, 79, 31, 0.797);
+  display: flex;
+  margin-left: -16px; /* Compensación para el espacio entre columnas */
+  width: auto;
   
 }
 
 
-.masonry-gallery_column {
+.my-masonry-gallery_column {
   padding-left: 16px;
   background-clip: padding-box;
   border: 3px dotted rgba(128, 0, 128, 0.3);
   
 }
 
-.masonry-item {
+.item {
     width: 100%;
+    margin-left: -16px; /* Compensación para el espacio entre columnas */
+    width: auto;
     position: relative;
     overflow: hidden;
-    border: 2px solid red;
+    cursor: pointer;
+    background: var(--bg);
     border-radius: 10px;
 }
 
-.masonry-item img {
+.item img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-.masonry-item:hover img {
+.item:hover img {
     transform: scale(1.02);
+    opacity: 0.05;
 }
 
 

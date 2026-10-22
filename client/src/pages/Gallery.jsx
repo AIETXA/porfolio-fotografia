@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Masonry from 'react-masonry-css' 
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,15 +7,27 @@ import '../styles/gallery.css'
 
 
 
-export default function Gallery({ photos = []}) {
+export default function Gallery() {
     const navigate = useNavigate();
+    const [ photos, setPhotos ] = useState([]);
     const [ selectedCategory, setSelectedCategory ] = useState('all');
+    const [ searchInput, setSearchInput ] = useState('');
+    
+    useEffect(() => {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      fetch(`${apiUrl}/photos`)
+      .then(res => res.json())
+      .then(data => setPhotos(data))
+      .catch(err => console.error('Error al cargar las fotos:', err))
+    }, []);
 
     const categories = ['all', ...new Set(photos?.map((p) => p.category) || [])];
 
-    const filteredPhotos = selectedCategory === 'all'
-      ? photos
-      : photos.filter((p) => p.category === selectedCategory);
+    const filteredPhotos = photos.filter((p) => {
+        const matchCategory = selectedCategory === 'all' || p.category === selectedCategory;
+        const matchSearch = p.title?.toLowerCase().includes(searchInput.toLowerCase());
+        return matchCategory && matchSearch;
+    });
 
     const breakpointColumnsObj = {
       default: 4,
@@ -29,7 +41,15 @@ export default function Gallery({ photos = []}) {
   return (
     <div className="gallery-view">
       <div className="searcher">
-        <input type="text" name="search" id="search" placeholder="Buscar..."/>
+        <input 
+          type="text" 
+          name="search" 
+          id="search" 
+          placeholder="Buscar..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+
         <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
         
       </div>  
@@ -50,7 +70,7 @@ export default function Gallery({ photos = []}) {
         <Masonry breakpointCols={breakpointColumnsObj} className="masonry-gallery" columnClassName="my-masonry-grid_column">
           {filteredPhotos.map(photo => (
             <div className="item" key={photo._id} onClick={() => navigate(`/photo/${photo._id}`)}>
-              <img src={photo.url} alt={photo.title} />
+              <img src={photo.imageUrl} alt={photo.title} />
             </div>
           ))}
         </Masonry>
