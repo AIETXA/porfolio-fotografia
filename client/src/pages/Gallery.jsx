@@ -49,7 +49,7 @@ export default function Gallery({ photos = []}) {
       <div className="gallery-grid">
         <Masonry breakpointCols={breakpointColumnsObj} className="masonry-gallery" columnClassName="my-masonry-grid_column">
           {filteredPhotos.map(photo => (
-            <div className="item" key={photo.id} onClick={() => navigate(`/photo/${photo.id}`)}>
+            <div className="item" key={photo._id} onClick={() => navigate(`/photo/${photo._id}`)}>
               <img src={photo.url} alt={photo.title} />
             </div>
           ))}
