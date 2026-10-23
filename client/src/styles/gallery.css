@@ -144,6 +144,7 @@
 
   .gallery-view {
     padding: 1rem 3vw;
-    padding-bottom: 70px;
+    padding-bottom: 170px;
+    box-sizing: border-box;
   }
 }

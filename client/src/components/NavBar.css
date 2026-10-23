@@ -109,37 +109,6 @@
 }
 
 
-@media (max-width: 900px) {
-    .navbar {
-        height: auto;
-        min-height: 90px;
-        padding: .7rem 5vw;
-        padding-bottom: 90px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        z-index: 1000;
-        backdrop-filter: blur(8px);
-    }
-
-    .logo {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-        margin-bottom: 15px;
-        grid-column: 1;
-        position: static;
-    }
-
-
-    .btn-light-dark {
-        font-size: 10px;
-        opacity: 50%;
-    }
-} 
 
 
 
@@ -147,8 +116,8 @@
     .navbar {
         height: auto;
         min-height: auto;
-        padding: 0 1rem;
-        
+        padding: 0.9rem 5vw;
+        padding-bottom: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;

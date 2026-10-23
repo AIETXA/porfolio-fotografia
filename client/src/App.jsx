@@ -51,36 +51,7 @@ function MainLayout() {
 
 
 function App() {
-  /*return (
-    <AuthProvider>
-      <Router>
-        <NavBar/>
-        
-          <div className='app-container'>
-              <Routes>
-                <Route path='/' element={<Home/>} /> 
-                <Route path='/about' element={<AboutMe/>} /> 
-                <Route path='/gallery' element={<Gallery/>} /> 
-                <Route path='/photo/:id' element={<Details/>}/>
-                <Route path='/contact' element={<Contact/>} /> 
-                
-                <Route path='/admin/login' element={<AdminLogin/>}/>
 
-
-                <Route element={<ProtectAdmin/>}>
-                  <Route path='/admin' element={<AdminPanel/>}/>
-                </Route>
-                  
-              </Routes>
-
-          </div> 
-      
-        <Footer/>
-      </Router>
-    </AuthProvider>
-  )
-}
-*/
 
 return (
     <AuthProvider>

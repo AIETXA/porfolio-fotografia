@@ -1,4 +1,4 @@
-/* Fondo completo tipo Modal con desenfoque */
+
 .details-slaider, .details-overlay {
   position: fixed;
   inset: 0;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-/* Botón cerrar */
+
 .btn-close {
   position: absolute;
   top: 24px;
@@ -66,7 +66,7 @@
   box-shadow: 0 15px 40px var(--shadow-color);
 }
 
-/* Título y categoría debajo de la foto */
+
 .photo-caption {
   margin-top: 18px;
   text-align: center;
@@ -90,7 +90,7 @@
   letter-spacing: 1.5px;
 }
 
-/* Personalización elegante de las flechas de Swiper */
+
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--text) !important;
@@ -100,7 +100,7 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 1.8rem !important; /* Flechas más delicadas y sutiles */
+  font-size: 1.8rem !important;
 }
 
 .swiper-button-next:hover,

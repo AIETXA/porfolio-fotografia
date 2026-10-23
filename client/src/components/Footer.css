@@ -56,6 +56,12 @@
         height: auto;
         min-height: auto;
         
+        
     }
+
+    .footer.visible {
+    bottom: -20;
+}
+
 
 }
