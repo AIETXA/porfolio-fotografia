@@ -147,7 +147,7 @@
     .navbar {
         height: auto;
         min-height: auto;
-        padding: 1rem 5vw;
+        padding: 0 1rem;
         
         display: flex;
         flex-direction: column;
@@ -169,9 +169,10 @@
     .nav-links {
         display: flex;
         flex-direction: row; 
-        
         justify-content: center;
-        gap: 2.5rem; 
+        font-size: 0.9rem;
+        width: 100%;
+        gap: 1.5rem; 
         
     }
 

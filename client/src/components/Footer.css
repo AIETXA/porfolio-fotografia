@@ -14,7 +14,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
     
 }
 
@@ -42,4 +45,16 @@
     font-weight: 600;
     transform: scaleX(1);
     
+}
+
+@media (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.5rem;
+        height: auto;
+        min-height: auto;
+        
+    }
+
 }

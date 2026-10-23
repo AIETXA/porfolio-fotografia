@@ -18,16 +18,21 @@ function Footer() {
             const scrollPosition = window.scrollY;
             const bodyHeight = document.documentElement.scrollHeight;
 
+            if(bodyHeight <= windowHeight + 20) {
+                setIsVisible(false);
+                return;
+            }
             if(windowHeight + scrollPosition >= bodyHeight - 10) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
             }
         };
+        handleScroll();
 
         window.addEventListener('scroll', handleScroll);
         return() => window.removeEventListener('scroll', handleScroll)
-    }, []);
+    }, [location.pathname]);
 
     return (
         <footer className={`footer ${isVisible ? 'visible' : ''}`}>
