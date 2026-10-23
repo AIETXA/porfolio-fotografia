@@ -14,6 +14,7 @@ import AdminLogin from './pages/Login.jsx'
 import Details from './pages/Details.jsx'
 import ProtectAdmin from './components/ProtectedRoute.jsx'
 import AdminPanel from './components/AdminPanel.jsx'
+import EditPhotos from './components/EditPhotos.jsx'
 
 
 function MainLayout() {
@@ -38,6 +39,7 @@ function MainLayout() {
 
             <Route element={<ProtectAdmin/>}>
               <Route path='/admin' element={<AdminPanel/>}/>
+              <Route path='/admin/edit' element={<EditPhotos/>}/>
             </Route>
           </Routes>
       </div> 

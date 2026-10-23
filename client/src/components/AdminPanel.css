@@ -1,7 +1,10 @@
 .admin-container {
     max-width: 600px;
-    margin: 100px auto;
+    width: 100%;
+    margin: 90px auto;
     padding: 32px; 
+    padding-left: 16px;  
+    padding-right: 16px;
     background-color: var(--bg);
     border: 1px solid var(--text);
     border-radius: 16px;
@@ -229,7 +232,7 @@
 }
 
 
-/* Animación sutil de entrada */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -243,4 +246,15 @@
 
 .fade-in {
     animation: fadeIn 0.3s ease forwards;
+}
+
+@media (max-width: 900px) {
+    .admin-container {
+        
+      
+       margin: 170px auto 40px auto;
+       width: 92%;
+       max-width: 520px;
+       padding: 30px 26px;
+    }
 }
