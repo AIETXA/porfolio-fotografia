@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Keyboard, EffectFade } from "swiper/modules"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
