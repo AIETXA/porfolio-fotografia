@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './AdminPanel.css'
 
 
@@ -12,10 +12,7 @@ export default function AdminPanel() {
     const [ isError, setIsError ] = useState(false);
     const [ category, setCategory ] = useState('')
 
-    const [ photos, setPhotos ] = useState([]);
-    const [ editPhoto, setEditPhoto ] = useState(null);
-    const [ editTitle, setEditTitle ] = useState('');
-    const [ editCategory, setEditCategory ] = useState('');
+  
 
     const apiUrl = import.meta.env.VITE_API_URL || 'https://porfolio-fotografia.onrender.com';
     

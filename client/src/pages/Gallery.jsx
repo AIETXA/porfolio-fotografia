@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import Masonry from 'react-masonry-css' 
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import '../styles/gallery.css'
 
@@ -12,18 +13,39 @@ export default function Gallery() {
     const [ photos, setPhotos ] = useState([]);
     const [ selectedCategory, setSelectedCategory ] = useState('all');
     const [ searchInput, setSearchInput ] = useState('');
+    const [ loading, setLoading ] = useState(true);
+    
+
     
     useEffect(() => {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      fetch(`${apiUrl}/api/photos`)
-      .then(res => res.json())
-      .then(data => setPhotos(data))
-      .catch(err => console.error('Error al cargar las fotos:', err))
-    }, []);
+        const apiUrl = import.meta.env.VITE_API_URL;
+        fetch(`${apiUrl}/api/photos`)
+        .then(res => res.json())
+        .then(data => {
+          setPhotos(data); 
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error('Error al cargar las fotos:', err); 
+          setLoading(false);
+        });
+      }, []);
 
-    const categories = ['all', ...new Set(photos?.map((p) => p.category) || [])];
+    
 
-    const filteredPhotos = photos.filter((p) => {
+
+    if(loading) {
+      return(
+        <div className="spinner-container">
+          <FontAwesomeIcon icon={faSpinner} spin/>
+          <p>Cargando imágenes...</p>
+        </div>
+      )
+    };
+
+      const categories = ['all', ...new Set(photos?.map((p) => p.category) || [])];
+
+      const filteredPhotos = photos.filter((p) => {
         const matchCategory = selectedCategory === 'all' || p.category === selectedCategory;
         const matchSearch = p.title?.toLowerCase().includes(searchInput.toLowerCase());
         return matchCategory && matchSearch;
