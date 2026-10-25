@@ -41,18 +41,6 @@ Este proyecto consiste en una **aplicación web Full Stack dinámica y administr
 
 ---
 
-## 🔐 Acceso de Evaluación (Panel Admin)
-
-Para que puedan probar la totalidad del flujo Full Stack y las funcionalidades del panel de administración (alta, edición y borrado de imágenes):
-
-* **Acceso / Login:** `/admin/login`
-* **Usuario Demo:** `admin`
-* **Contraseña Demo:** `franco`
-* **Gestión y edición:** `/admin/edit`
-
-
----
-
 ## 📂 Estructura del Proyecto
 
 El repositorio está organizado en una arquitectura monorepo que separa claramente la capa de cliente y de servidor:
